@@ -6,7 +6,6 @@
 package BBDD;
 
 import Modelo.Cliente;
-import Modelo.Factura;
 import Modelo.Ingrediente;
 import Modelo.Pizza;
 import java.sql.Connection;
@@ -130,7 +129,7 @@ public class Conexion {
         try {
             conectar();
             Statement st = con.createStatement();
-            st.executeUpdate("INSERT INTO telepizza.cliente  VALUES ('"+ cliente.getNombre()+ "', '" + cliente.getDireccion() + "', "+cliente.getTelefono()+");");
+            st.executeUpdate("INSERT INTO telepizza.cliente  VALUES ("+ 0 +",'"+ cliente.getNombre()+ "', '" + cliente.getDireccion() + "', "+cliente.getTelefono()+");");
 
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
