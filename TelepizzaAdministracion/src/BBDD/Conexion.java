@@ -134,9 +134,58 @@ public class Conexion {
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         
     }
 
+    public void crearIngrediente(Ingrediente ing){
+        
+        try {
+            conectar();
+            Statement st = con.createStatement();
+            st.executeUpdate("INSERT INTO telepizza.ingrediente  VALUES ("+ 0 +",'"+ ing.getNombre()+ "', " + ing.getPrecio()+");");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
+    public void crearPizza(Pizza p){
+        
+        try {
+            conectar();
+            Statement st = con.createStatement();
+            st.executeUpdate("INSERT INTO telepizza.pizza  VALUES ("+ 0 +",'"+ p.getNombre()+ "', " + p.getPrecio()+");");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public void eliminarIngrediente(String nombre){
+        
+        try {
+            conectar();
+            Statement st = con.createStatement();
+            st.executeUpdate("DELETE FROM telepizza.ingrediente WHERE ingrediente.nombre = '"+ nombre +"';");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public void eliminarPizza(String nombre){
+        
+        try {
+            conectar();
+            Statement st = con.createStatement();
+            st.executeUpdate("DELETE FROM telepizza.pizza WHERE pizza.nombre = '"+ nombre +"';");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
 }

@@ -11,6 +11,34 @@ package Modelo;
  * @author Profesor
  */
 public class Ingrediente {
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the precio
+     */
+    public float getPrecio() {
+        return precio;
+    }
+
+    /**
+     * @param precio the precio to set
+     */
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
     private String nombre;
     private float precio;
 
@@ -27,7 +55,7 @@ public class Ingrediente {
 
     @Override
     public String toString() {
-        return nombre;
+        return getNombre();
     }
     
     

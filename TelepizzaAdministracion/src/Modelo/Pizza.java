@@ -51,6 +51,13 @@ public class Pizza {
         this.vIngredientes = new ArrayList<>();
     }
 
+    public Pizza(String nombre, ArrayList<Ingrediente> vIngredientes) {
+        this.nombre = nombre;
+        this.vIngredientes = vIngredientes;
+    }
+
+    
+    
     /**
      * Calcula el precio de la pizzas con las tarifas actuales: Pizzas pequeña +
      * 1€, mediana + 5€, familiar +7€ Masas: fina +2€ clásica +0€
